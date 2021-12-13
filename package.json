@@ -1,0 +1,31 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "description": "This is a sample edge microservice.",
+  "main": "index.js",
+  "scripts": {
+    "package": "node ./node_modules/@mimik/edge-ms-packager/index.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js --progress --colors --config webpack.config.js"
+  },
+  "author": "mimik",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "@mimik/edge-ms-packager": "^1.0.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "terser-webpack-plugin": "^2.2.1"
+  },
+  "dependencies": {
+    "q": "^1.5.1",
+    "query-string": "^5.1.1",
+    "router": "^1.3.3"
+  }
+}
