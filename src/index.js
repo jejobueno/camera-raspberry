@@ -2,7 +2,6 @@ import Router from 'router';
 import queryString from 'query-string';
 import Q from 'q';
 import { env } from './helper';
-import fetch from 'node-fetch';
 
 const app = Router({
   mergeParams: true,
@@ -17,14 +16,24 @@ mimikModule.exports = (context, req, res) => {
 
 // Sample HTTP Request
 app.get('/', (req, res) => {
-  const response = await fetch('https://api.github.com/users/github');
-  const data = await response.json();
-  res.end(JSON.stringify(data))
+  context.http.request(({
+    url: 'http://127.0.0.1:5000/',
+    success: function(r) {
+      //res.end(JSON.stringify(JSON.parse(r.data), null, 2));
+      res.end(r.data)
+    },
+  }));
 });
 
-// Sample HTTP Request with Parameters
-app.get('/sayHello/:name', (req, res) => {
-  res.end(`Hello ${req.params.name}`);
+// Sample HTTP Request
+app.get('/detect', (req, res) => {
+  context.http.request(({
+    url: 'http://127.0.0.1:5000/detect',
+    success: function(r) {
+      res.end(r.data)
+    },
+  }));
 });
+
 
 

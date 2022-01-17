@@ -1,6 +1,6 @@
 {
-  "name": "detection-microservice-v1",
-  "image": "detection-microservice-v1",
+  "name": "microservice-v1",
+  "image": "microservice-v1",
   "env": {
     "MCM.BASE_API_PATH": "/sample/v1/",
     "MCM.WEBSOCKET_SUPPORT": "true"
